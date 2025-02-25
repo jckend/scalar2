@@ -132,11 +132,11 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   timeline.push(instructions)
 
   /* define trial stimuli array for timeline variables */
-  const test_stimuli: Record<string, string>[] = [
-    { stimulus: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>'},
-    { stimulus: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Only some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>'},
-    { stimulus: '<p>If blue man throws his rock, the vase will shatter.</p>', prompt: '<p>If blue man throws his rock, the vase will shatter.</p>'},
-    { stimulus: '<p>If blue man throws his rock, the vase will shatter.</p>', prompt: '<p>If blue man does not throw his rock, the vase will not shatter.</p>'},
+  const test_stimuli: Record<string, string, array>[] = [
+    { stimulus: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: [ "False", "Unsure", "True" ]},
+    { stimulus: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Only some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: [ "False", "Unsure", "True" ]},
+    { stimulus: '<p>If blue man throws his rock, the vase will shatter.</p>', prompt: '<p>If blue man throws his rock, the vase will shatter.</p>', likert_scale: [ "False", "Unsure", "True" ]},
+    { stimulus: '<p>If blue man throws his rock, the vase will shatter.</p>', prompt: '<p>If blue man does not throw his rock, the vase will not shatter.</p>', likert_scale: [ "False", "Unsure", "True" ]},
   ]
 
   /*define likert scale*/
