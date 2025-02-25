@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import jsPsychHtmlKeyboardResponse from '@jspsych/plugin-html-keyboard-response'
-import jsPsychImageSliderResponse from '@jspsych/plugin-image-slider-response'
+import jsPsychHtmlSliderResponse from '@jspsych/plugin-html-slider-response'
 import jsPsychImageKeyboardResponse from '@jspsych/plugin-image-keyboard-response'
 import jsPsychPreload from '@jspsych/plugin-preload'
 import jsPsychSurveyLikert from '@jspsych/plugin-survey-likert'
@@ -141,7 +141,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   
   /* define test trials */
   const test1 = {
-    type: jsPsychImageSliderResponse,
+    type: jsPsychHtmlSliderResponse,
     stimulus: jsPsych.timelineVariable('stimulus1') as unknown as string,
     labels: ['0%', '50%','100%'],
     prompt: jsPsych.timelineVariable('prompt') as unknown as string,
