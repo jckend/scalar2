@@ -122,9 +122,9 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   const instructions = {
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
-<p>In this experiment, a circle will appear in the center of the screen.</p>
-<p>If the circle is <span class="font-semibold text-blue-500">blue</span>, press the letter <span class="font-semibold text-blue-500">F</span> on the keyboard as fast as you can.</p>
-<p>If the circle is <span class="font-semibold text-orange-500">orange</span>, press the letter <span class="font-semibold text-orange-500">J</span> as fast as you can.</p>
+<p>In this experiment, you be given a description of a context.</p>
+<p>You will first be asked to make a probability judgment based on the description.</p>
+<p>You will then be asked how you would interpret an utterance given the context.</p>
 <p>Press any key to begin.</p>
     `,
     post_trial_gap: 2000,
