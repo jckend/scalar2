@@ -138,10 +138,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water.</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. He tells you: The water is warm.</p>', prompt: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
     { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water.</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. He tells you: The water is just warm.</p>', prompt: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
   ]
-
-  /*define likert scale*/
-  var likert_scale = [ "False", "Unsure", "True" ]
-
+  
   /* define test trials */
   const test1 = {
     type: jsPsychImageSliderResponse,
@@ -161,7 +158,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     questions: [
       {
         prompt: jsPsych.timelineVariable('prompt') as unknown as string, 
-        labels: likert_scale
+        labels: jsPsych.timelineVariable('likert_scale') as unknown as array,
       }
       ],
     on_finish: function (data: TrialData) {
