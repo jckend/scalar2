@@ -133,10 +133,10 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
 
   /* define trial stimuli array for timeline variables */
   const test_stimuli: Record<string, string, array>[] = [
-    { stimulus: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: ["some, but not all", "all" ]},
-    { stimulus: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Only some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: ["some, but not all", "all" ]},
-    { stimulus: '<p>Joe thrusts her hand into a pot of boiling water. He tells you: The water is warm.</p>', prompt: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
-    { stimulus: '<p>Joe thrusts her hand into a pot of boiling water. He tells you: The water is just warm.</p>', prompt: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
+    { stimulus1: '<p>Cleo throws 10 marbles into the swimming pool.</p>', stimulus2: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: ["some, but not all", "all" ]},
+    { stimulus1: '<p>Cleo throws 10 marbles into the swimming pool.</p>', stimulus2: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Only some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: ["some, but not all", "all" ]},
+    { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water.</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. He tells you: The water is warm.</p>', prompt: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
+    { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water.</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. He tells you: The water is just warm.</p>', prompt: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
   ]
 
   /*define likert scale*/
@@ -145,7 +145,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   /* define test trials */
   const test1 = {
     type: jsPsychImageSliderResponse,
-    stimulus: jsPsych.timelineVariable('stimulus') as unknown as string,
+    stimulus: jsPsych.timelineVariable('stimulus1') as unknown as string,
     labels: ['0%', '50%','100%'],
     prompt: jsPsych.timelineVariable('prompt') as unknown as string,
     slider_width: 500,
@@ -157,7 +157,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
 
   const test2 = {
     type: jsPsychSurveyLikert,
-    preamble: jsPsych.timelineVariable('stimulus') as unknown as string,
+    preamble: jsPsych.timelineVariable('stimulus2') as unknown as string,
     questions: [
       {
         prompt: jsPsych.timelineVariable('prompt') as unknown as string, 
