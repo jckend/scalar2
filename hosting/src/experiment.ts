@@ -133,10 +133,10 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
 
   /* define trial stimuli array for timeline variables */
   const test_stimuli: Record<string, string, array>[] = [
-    { stimulus: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: [ "False", "Unsure", "True" ]},
-    { stimulus: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Only some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: [ "False", "Unsure", "True" ]},
-    { stimulus: '<p>If blue man throws his rock, the vase will shatter.</p>', prompt: '<p>If blue man throws his rock, the vase will shatter.</p>', likert_scale: [ "False", "Unsure", "True" ]},
-    { stimulus: '<p>If blue man throws his rock, the vase will shatter.</p>', prompt: '<p>If blue man does not throw his rock, the vase will not shatter.</p>', likert_scale: [ "False", "Unsure", "True" ]},
+    { stimulus: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: ["some, but not all", "all" ]},
+    { stimulus: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Only some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: ["some, but not all", "all" ]},
+    { stimulus: '<p>Joe thrusts her hand into a pot of boiling water. He tells you: The water is warm.</p>', prompt: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
+    { stimulus: '<p>Joe thrusts her hand into a pot of boiling water. He tells you: The water is just warm.</p>', prompt: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
   ]
 
   /*define likert scale*/
