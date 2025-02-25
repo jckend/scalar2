@@ -133,10 +133,10 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
 
   /* define trial stimuli array for timeline variables */
   const test_stimuli: Record<string, string, array>[] = [
-    { stimulus1: '<p>Cleo throws 10 marbles into the swimming pool.</p>', stimulus2: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: ["some, but not all", "all" ]},
-    { stimulus1: '<p>Cleo throws 10 marbles into the swimming pool.</p>', stimulus2: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Only some of the marbles sank.</p>', prompt: '<p>How many marbles do you think sank?</p>', likert_scale: ["some, but not all", "all" ]},
-    { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water.</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. He tells you: The water is warm.</p>', prompt: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
-    { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water.</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. He tells you: The water is just warm.</p>', prompt: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
+    { stimulus1: '<p>Cleo throws 10 marbles into the swimming pool.</p>', stimulus2: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Some of the marbles sank.</p>', prompt1: '<p>How likely is it that all the marbles sank?</p>', prompt2: '<p>How many marbles do you think sank?</p>', likert_scale: ["some, but not all", "all" ]},
+    { stimulus1: '<p>Cleo throws 10 marbles into the swimming pool.</p>', stimulus2: '<p>Cleo throws 10 marbles into the swimming pool. She tells you: Only some of the marbles sank.</p>', prompt1: '<p>How likely is it that all the marbles sank?</p>', prompt2: '<p>How many marbles do you think sank?</p>', likert_scale: ["some, but not all", "all" ]},
+    { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water.</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. He tells you: The water is warm.</p>', prompt1: '<p>How likely is it that the water is scalding?</p>', prompt2: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
+    { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water.</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. He tells you: The water is just warm.</p>', prompt1: '<p>How likely is it that the water is scalding?</p>', prompt2: '<p>How hot is the water?</p>', likert_scale: ["warm, but not scalding", "scalding" ]},
   ]
   
   /* define test trials */
