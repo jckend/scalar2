@@ -144,7 +144,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     type: jsPsychHtmlSliderResponse,
     stimulus: jsPsych.timelineVariable('stimulus1') as unknown as string,
     labels: ['0%', '50%','100%'],
-    prompt: jsPsych.timelineVariable('prompt') as unknown as string,
+    prompt: jsPsych.timelineVariable('prompt1') as unknown as string,
     slider_width: 500,
     on_finish: function (data: TrialData) {
       // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, unicorn/no-null
@@ -157,7 +157,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     preamble: jsPsych.timelineVariable('stimulus2') as unknown as string,
     questions: [
       {
-        prompt: jsPsych.timelineVariable('prompt') as unknown as string, 
+        prompt: jsPsych.timelineVariable('prompt2') as unknown as string, 
         labels: jsPsych.timelineVariable('likert_scale') as unknown as array,
       }
       ],
