@@ -173,9 +173,8 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     type: jsPsychSurveyLikert,
     questions: [
       {
-        prompt: `
-                    <p>${jsPsych.timelineVariable('stimulus2')}</p>
-                    <p>${jsPsych.timelineVariable('prompt2')}</p>`,  
+        prompt: `<p>${jsPsych.timelineVariable('stimulus2')}</p>
+                  <p>${jsPsych.timelineVariable('prompt2')}</p>`,  
         labels: ["no", "maybe", "yes"],
       }
       ],
