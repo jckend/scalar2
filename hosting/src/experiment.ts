@@ -124,7 +124,8 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     stimulus: `
 <p>In this experiment, you be given a description of a context.</p>
 <p>You will first be asked to make a probability judgment based on the description.</p>
-<p>You will then be asked how you would interpret an utterance given the context. In all examples, assume that the speaker is honest and has no incentive decieve you.</p>
+<p>You will then be asked how you would interpret an utterance given the context.</p> 
+<p>In all examples, assume that the speaker is honest and has no incentive decieve you.</p>
 <p>Press any key to begin.</p>
     `,
     post_trial_gap: 2000,
