@@ -174,7 +174,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     preamble: jsPsych.timelineVariable('stimulus2') as unknown as string,
     questions: [
       {
-        prompt: function () { 
+        prompt: function (string: test_stimuli) { 
           return jsPsych.timelineVariable('prompt2')
         }, 
         labels: ["no", "maybe", "yes"],
