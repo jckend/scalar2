@@ -133,26 +133,26 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   timeline.push(instructions)
 
   /* define trial stimuli array for timeline variables */
-  const test_stimuli: Record<string, string, string, string>[] = [
-    { stimulus1: '<p>Cleo throws 10 marbles into a swimming pool.</p>', stimulus2: '<p>Cleo throws 10 marbles into a swimming pool. Her friend tells you: Some of the marbles sank.</p>', prompt1: '<p>How likely is it that all the marbles sank?</p>'},
-    { stimulus1: '<p>Cleo throws 10 marbles into a sand box.</p>', stimulus2: '<p>John throws 10 marbles into a sand box. Her friend tells you: Some of the marbles sank.</p>', prompt1: '<p>How likely is it that all the marbles sank?</p>'},
-    { stimulus1: '<p>Troy threw 5 wine glasses off the Empire State Building.</p>', stimulus2: '<p>Troy threw 5 wine glasses off the Empire State Building. His friend tells you: Most of the glasses broke.</p>', prompt1: '<p>How likely is it that all the glasses broke?</p>'},
-    { stimulus1: '<p>Troy dropped 5 wine glasses at the party.</p>', stimulus2: '<p>Troy dropped 5 wine glasses at the party. His friend tells you: Most of the glasses broke.</p>', prompt1: '<p>How likely is it that all the glasses broke?</p>'},
-    { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water.</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. His friend tells you: The water is warm.</p>', prompt1: '<p>How likely is it that the water is scalding?</p>'},
-    { stimulus1: '<p>Joe thrusts his hand into a bowl of steaming soup.</p>', stimulus2: '<p>Joe thrusts his hand into a bowl of steaming soup. His friend tells you: The soup is warm.</p>', prompt1: '<p>How likely is it that the soup is scalding?</p>'},
-    { stimulus1: '<p>Alice got a shirt from a clothing giveaway.</p>', stimulus2: '<p>Alice got a shirt from a clothing giveaway. Her friend tells you: The shirt was cheap.</p>', prompt1: '<p>How likely is it that the shirt was free?</p>'},
-    { stimulus1: '<p>Alice got a shirt from a clothing store.</p>', stimulus2: '<p>Alice got a shirt from a clothing store. Her friend tells you: The shirt was cheap.</p>', prompt1: '<p>How likely is it that the shirt was free?</p>'},
-    { stimulus1: '<p>James ate a restaurant with two stars on Yelp.</p>', stimulus2: '<p>James ate a restaurant with five stars on Yelp. His friend tells you: The food was palatable.</p>', prompt1: '<p>How likely is it that the food was good?</p>'},
-    { stimulus1: '<p>James ate a restaurant with five stars on Yelp.</p>', stimulus2: '<p>James ate a restaurant with five stars on Yelp. His friend tells you: The food was palatable.</p>', prompt1: '<p>How likely is it that the food was good?</p>'},
-    { stimulus1: '<p>Claire is struggling in calculus.</p>', stimulus2: '<p>Claire is struggling in calculus. Her friend tells you: She got an okay grade on the midterm.</p>', prompt1: '<p>How likely is it that Claire did really well?</p>'},
-    { stimulus1: '<p>Claire is excelling in calculus.</p>', stimulus2: '<p>Claire is excelling in calculus. Her friend tells you: She got an okay grade on the midterm.</p>', prompt1: '<p>How likely is it that Claire did really well?</p>'},
+  const test_stimuli: Record<string, string>[] = [
+    { stimulus1: '<p>Cleo throws 10 marbles into a swimming pool. How likely is it that all the marbles sank?</p>', stimulus2: '<p>Cleo throws 10 marbles into a swimming pool. Her friend tells you: Some of the marbles sank.</p>'},
+    { stimulus1: '<p>Cleo throws 10 marbles into a sandbox. How likely is it that all the marbles sank?</p>', stimulus2: '<p>John throws 10 marbles into a sandbox. Her friend tells you: Some of the marbles sank.</p>'},
+    { stimulus1: '<p>Troy threw 5 wine glasses off the Empire State Building. How likely is it that all the glasses broke?</p>', stimulus2: '<p>Troy threw 5 wine glasses off the Empire State Building. His friend tells you: Most of the glasses broke.</p>'},
+    { stimulus1: '<p>Troy dropped 5 wine glasses at the party. How likely is it that all the glasses broke?</p>', stimulus2: '<p>Troy dropped 5 wine glasses at the party. His friend tells you: Most of the glasses broke.</p>'},
+    { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water. How likely is it that the water is scalding?</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. His friend tells you: The water is warm.</p>'},
+    { stimulus1: '<p>Joe thrusts his hand into a bowl of steaming soup. How likely is it that the soup is scalding?</p>', stimulus2: '<p>Joe thrusts his hand into a bowl of steaming soup. His friend tells you: The soup is warm.</p>'},
+    { stimulus1: '<p>Alice got a shirt from a clothing giveaway. How likely is it that the shirt was free?</p>', stimulus2: '<p>Alice got a shirt from a clothing giveaway. Her friend tells you: The shirt was cheap.</p>'},
+    { stimulus1: '<p>Alice got a shirt from a clothing store. How likely is it that the shirt was free?</p>', stimulus2: '<p>Alice got a shirt from a clothing store. Her friend tells you: The shirt was cheap.</p>'},
+    { stimulus1: '<p>James ate at a restaurant with two stars on Yelp. How likely is it that the food was good?</p>', stimulus2: '<p>James ate a restaurant with five stars on Yelp. His friend tells you: The food was palatable.</p>''},
+    { stimulus1: '<p>James ate at a restaurant with five stars on Yelp. How likely is it that the food was good?</p>', stimulus2: '<p>James ate a restaurant with five stars on Yelp. His friend tells you: The food was palatable.</p>'},
+    { stimulus1: '<p>Claire is struggling in calculus. How likely is it that Claire did really well on her midterm?</p>', stimulus2: '<p>Claire is struggling in calculus. Her friend tells you: She got an okay grade on the midterm.</p>'},
+    { stimulus1: '<p>Claire is excelling in calculus. How likely is it that Claire did really well on her midterm?</p>', stimulus2: '<p>Claire is excelling in calculus. Her friend tells you: She got an okay grade on the midterm.</p>'},
+
   ]
   
   /* define test trials */
   const test1 = {
     type: jsPsychHtmlSliderResponse,
     stimulus: jsPsych.timelineVariable('stimulus1') as unknown as string,
-    prompt: jsPsych.timelineVariable('prompt1') as unknown as string,
     labels: ['0%', '50%','100%'],
     slider_width: 500,
     on_finish: function (data: TrialData) {
