@@ -124,7 +124,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     stimulus: `
 <p>In this experiment, you be given a description of a context.</p>
 <p>You will first be asked to make a judgment about the likelihood of an event.</p>
-<p>You will then be asked to make sense of a statement given the description of a context.</p> 
+<p>You will then be asked to judge how odd you find a sentence in the context.</p> 
 <p>In all examples, assume that the speaker is honest and has no incentive decieve you.</p>
 <p>Press any key to begin.</p>
     `,
@@ -166,8 +166,8 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     preamble: jsPsych.timelineVariable('stimulus2') as unknown as string,
     questions: [
       {
-        prompt: "<p>Do you agree with the friend's statement?</p>", 
-        labels: ["strong disagree", "disagree", "neutral", "agree", "strongly agree"],
+        prompt: "<p>Do you find the friend's statement odd or natural?</p>", 
+        labels: ["very odd", "somewhat odd", "neutral", "somewhat natural", "very natural"],
       }
       ],
     on_finish: function (data: TrialData) {
