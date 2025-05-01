@@ -62,6 +62,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
 
   /* initialize jsPsych */
   const jsPsych = initJsPsych({
+    show_progress_bar: true,
     on_data_update: function (trialData: TrialData) {
       if (debug) {
         console.log('jsPsych-update :: trialData ::', trialData)
