@@ -155,8 +155,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
     type: jsPsychHtmlKeyboardResponse,
     stimulus: `
 <p>In this experiment, you be given a description of a context.</p>
-<p>You will first be asked to make a judgment about the likelihood of an event.</p>
-<p>You will then be asked to judge how odd you find a sentence in the context.</p> 
+<p>You will first be asked to make a judgment about the likelihood of an event. You will then be asked to judge how odd you find a sentence in the context.</p> 
 <p>In all examples, assume that the speaker is honest and has no incentive deceive you.</p>
 <p>Press any key to begin.</p>
     `,
@@ -167,11 +166,13 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   /* define trial stimuli array for timeline variables */
   const test_stimuli: Record<string, string>[] = [
     { stimulus1: '<p>Cleo throws 10 marbles into a swimming pool. How likely is it that all the marbles sank?</p>', stimulus2: '<p>Cleo throws 10 marbles into a swimming pool. Her friend tells you: Some of the marbles sank.</p>'},
-    { stimulus1: '<p>Cleo throws 10 marbles into a sandbox. How likely is it that all the marbles sank?</p>', stimulus2: '<p>John throws 10 marbles into a sandbox. Her friend tells you: Some of the marbles sank.</p>'},
+    { stimulus1: '<p>Cleo throws 10 marbles into a sandbox. How likely is it that all the marbles sank?</p>', stimulus2: '<p>Cleo throws 10 marbles into a sandbox. Her friend tells you: Some of the marbles sank.</p>'},
     { stimulus1: '<p>Troy threw 5 wine glasses off the Empire State Building. How likely is it that all the glasses broke?</p>', stimulus2: '<p>Troy threw 5 wine glasses off the Empire State Building. His friend tells you: Most of the glasses broke.</p>'},
     { stimulus1: '<p>Troy dropped 5 wine glasses at the party. How likely is it that all the glasses broke?</p>', stimulus2: '<p>Troy dropped 5 wine glasses at the party. His friend tells you: Most of the glasses broke.</p>'},
     { stimulus1: '<p>Noah has missed class so often that he’s been declared truant. How likely is it that he came to class everyday this month?</p>', stimulus2: '<p>Noah has missed class so often that he’s been declared truant. His friend tells you: Noah sometimes comes to class.</p>'},
     { stimulus1: '<p>Noah won an award for having the best attendance in his school. How likely is it that he came to class everyday this month?</p>', stimulus2: '<p>Noah won an award for having the best attendance in his school. His friend tells you: Noah sometimes comes to class.</p>'},
+    { stimulus1: '<p>Jamie is very disorganized and frequently oversleeps. How likely is it that she will be on time to an appointment?</p>', stimulus2: '<p>Jamie is very disorganized and frequently oversleeps. Her friend tells you: Jamie is occasionally on time.</p>'},
+    { stimulus1: '<p>Jamie is very organized and punctual. How likely is it that she will be on time to an appointment</p>', stimulus2: '<p>Jamie is very organized and punctual. Her friend tells you: Jamie is occasionally on time.</p>'},
     { stimulus1: '<p>Joe thrusts his hand into a pot of boiling water. How likely is it that the water is scalding?</p>', stimulus2: '<p>Joe thrusts his hand into a pot of boiling water. His friend tells you: The water is warm.</p>'},
     { stimulus1: '<p>Joe thrusts his hand into a bowl of steaming soup. How likely is it that the soup is scalding?</p>', stimulus2: '<p>Joe thrusts his hand into a bowl of steaming soup. His friend tells you: The soup is warm.</p>'},
     { stimulus1: '<p>Alice got a shirt from a clothing giveaway. How likely is it that the shirt was free?</p>', stimulus2: '<p>Alice got a shirt from a clothing giveaway. Her friend tells you: The shirt was cheap.</p>'},
