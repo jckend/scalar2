@@ -197,14 +197,12 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   }
 
   const test2 = {
-    type: jsPsychSurveyLikert,
+    type: jsPsychHtmlSliderResponse,
     preamble: jsPsych.timelineVariable('stimulus2') as unknown as string,
-    questions: [
-      {
-        prompt: "<p>Do you find the friend's statement odd or natural?</p>", 
-        labels: ["very odd", "somewhat odd", "neutral", "somewhat natural", "very natural"],
-      }
-      ],
+    stimulus: "<p>Do you find the friend's statement odd or natural?</p>", 
+    labels: ["very odd", "somewhat odd", "neutral", "somewhat natural", "very natural"],
+    slider_width: 500,
+    require_movement: true, 
     on_finish: function (data: TrialData) {
       // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition, unicorn/no-null
       data.saveIncrementally = true
