@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-
+import externalHtml from '@jspsych/plugin-external-html'
+import jsPsychHtmlButtonResponse from '@jspsych/plugin-html-button-response'
 import jsPsychHtmlKeyboardResponse from '@jspsych/plugin-html-keyboard-response'
 import jsPsychHtmlSliderResponse from '@jspsych/plugin-html-slider-response'
 import jsPsychImageKeyboardResponse from '@jspsych/plugin-image-keyboard-response'
