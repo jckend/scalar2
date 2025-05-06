@@ -157,7 +157,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
 <p>In this experiment, you be given a description of a context.</p>
 <p>You will first be asked to make a judgment about the likelihood of an event.</p>
 <p>You will then be asked to judge how odd you find a sentence in the context.</p> 
-<p>In all examples, assume that the speaker is honest and has no incentive decieve you.</p>
+<p>In all examples, assume that the speaker is honest and has no incentive deceive you.</p>
 <p>Press any key to begin.</p>
     `,
     post_trial_gap: 2000,
