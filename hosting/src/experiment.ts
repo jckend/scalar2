@@ -200,8 +200,12 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   const test2 = {
     type: jsPsychHtmlSliderResponse,
     stimulus: jsPsych.timelineVariable('stimulus2') as unknown as string,
-    prompt: "<p>Do you find the friend's statement odd or natural?</p>", 
-    labels: ["very odd", "somewhat odd", "neutral", "somewhat natural", "very natural"],
+    questions: [
+      {
+        prompt: "<p>How odd do you find the friend's statement?</p>", 
+        labels: ["very odd", "somewhat odd", "neutral", "somewhat natural", "very natural"],
+      }
+    ],
     slider_width: 500,
     require_movement: true, 
     on_finish: function (data: TrialData) {
