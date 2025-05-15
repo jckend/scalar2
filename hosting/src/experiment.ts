@@ -188,12 +188,8 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   const test1 = {
     type: jsPsychHtmlSliderResponse,
     stimulus: jsPsych.timelineVariable('stimulus1') as unknown as string,
-    questions: [
-      {
-        prompt: jsPsych.timelineVariable('prompt1') as unknown as string, 
-        labels: ['0%', '50%','100%'],
-      }
-    ],
+    prompt: jsPsych.timelineVariable('prompt1') as unknown as string, 
+    labels: ['0%', '50%','100%'],
     slider_width: 500,
     require_movement: true, 
     on_finish: function (data: TrialData) {
@@ -205,12 +201,8 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   const test2 = {
     type: jsPsychHtmlSliderResponse,
     stimulus: jsPsych.timelineVariable('stimulus2') as unknown as string,
-    questions: [
-      {
-        prompt: "<p>How odd do you find the friend's statement?</p>", 
-        labels: ["very odd", "somewhat odd", "neutral", "somewhat natural", "very natural"],
-      }
-    ],
+    prompt: "<p>How odd do you find the friend's statement?</p>", 
+    labels: ["very odd", "somewhat odd", "neutral", "somewhat natural", "very natural"],
     slider_width: 500,
     require_movement: true, 
     on_finish: function (data: TrialData) {
