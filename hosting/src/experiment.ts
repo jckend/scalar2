@@ -187,7 +187,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   /* define test trials */
   const test1 = {
     type: jsPsychHtmlSliderResponse,
-    stimulus: jsPsych.timelineVariable('stimulus1'), 
+    stimulus: jsPsych.timelineVariable('stimulus1') + " " + jsPsych.timelineVariable('prompt1'), 
     labels: ['0%', '50%','100%'],
     slider_width: 500,
     require_movement: true, 
