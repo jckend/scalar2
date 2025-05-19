@@ -164,7 +164,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   timeline.push(instructions)
 
   /* define trial stimuli array for timeline variables */
-  const timelineVariables: Record<string, string>[] = [
+  const test_stimuli: Record<string, string>[] = [
     { stimulus1: 'Cleo throws 10 marbles into a swimming pool.',  prompt1: 'How likely is it that all the marbles sank?', stimulus2: '<p>Cleo throws 10 marbles into a swimming pool. Her friend tells you: Some of the marbles sank.</p>'},
     { stimulus1: 'Cleo throws 10 marbles into a sandbox.', prompt1: 'How likely is it that all the marbles sank?', stimulus2: '<p>Cleo throws 10 marbles into a sandbox. Her friend tells you: Some of the marbles sank.</p>'},
     { stimulus1: 'Troy threw 5 wine glasses off the Empire State Building.', prompt1: 'How likely is it that all the glasses broke?', stimulus2: '<p>Troy threw 5 wine glasses off the Empire State Building. His friend tells you: Most of the glasses broke.</p>'},
@@ -187,11 +187,8 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   /* define test trials */
   const test1 = {
     type: jsPsychHtmlSliderResponse,
-    stimulus: function(){
-                var html = `
-                    <p>${jsPsych.timelineVariable('stimulus1')}</p>
-                    <p>${jsPsych.timelineVariable('prompt1')}</p>`;
-                return html;
+    stimulus: () => {
+    return "How much do you like " + jsPsych.evaluateTimelineVariable('stimulus1') + "?";
     },          
     labels: ['0%', '50%','100%'],
     slider_width: 500,
