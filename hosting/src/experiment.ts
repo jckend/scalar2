@@ -201,7 +201,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
 
   const test2 = {
     type: jsPsychHtmlSliderResponse,
-    stimulus:     stimulus: () => {
+    stimulus () => {
     return jsPsych.evaluateTimelineVariable('stimulus2') + "<p>How odd do you find the friend's statement?</p>";
     },          
     labels: ["very odd", "somewhat odd", "neutral", "somewhat natural", "very natural"],
