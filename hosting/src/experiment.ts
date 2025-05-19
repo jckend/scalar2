@@ -164,7 +164,7 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   timeline.push(instructions)
 
   /* define trial stimuli array for timeline variables */
-  const test_stimuli: Record<string, string>[] = [
+  const timelineVariables: Record<string, string>[] = [
     { stimulus1: 'Cleo throws 10 marbles into a swimming pool.',  prompt1: 'How likely is it that all the marbles sank?', stimulus2: '<p>Cleo throws 10 marbles into a swimming pool. Her friend tells you: Some of the marbles sank.</p>'},
     { stimulus1: 'Cleo throws 10 marbles into a sandbox.', prompt1: 'How likely is it that all the marbles sank?', stimulus2: '<p>Cleo throws 10 marbles into a sandbox. Her friend tells you: Some of the marbles sank.</p>'},
     { stimulus1: 'Troy threw 5 wine glasses off the Empire State Building.', prompt1: 'How likely is it that all the glasses broke?', stimulus2: '<p>Troy threw 5 wine glasses off the Empire State Building. His friend tells you: Most of the glasses broke.</p>'},
