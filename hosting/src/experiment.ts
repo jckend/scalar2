@@ -188,7 +188,9 @@ export async function runExperiment(updateDebugPanel: () => void): Promise<void>
   const test1 = {
     type: jsPsychHtmlSliderResponse,
     stimulus: function(){
-                var html = jsPsych.timelineVariable('stimulus1') + jsPsych.timelineVariable('prompt1');
+                var html = `
+                    <p>${jsPsych.timelineVariable('stimulus1')}</p>
+                    <p>${jsPsych.timelineVariable('prompt1')}</p>`;
                 return html;
     },          
     labels: ['0%', '50%','100%'],
